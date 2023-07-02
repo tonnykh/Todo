@@ -9,16 +9,21 @@ import SwiftUI
 
 struct MainView: View {
     @StateObject private var viewModel = MainViewViewModel()
+    @Environment(\.managedObjectContext) var moc
     @State private var showSheet: Bool = false
     
+    @FetchRequest(entity: Task.entity(), sortDescriptors: []) var tasks: FetchedResults<Task>
+
     var body: some View {
         NavigationStack {
             List {
-                ForEach(viewModel.tasks.indices, id: \.self) { index in
-                    ItemRowView(task: $viewModel.tasks[index])
+                ForEach(tasks) { task in
+                    ItemRowView(task: task)
+//                    Text(task.item ?? "Unknown")
                 }
-                .onDelete(perform: viewModel.delete)
-                .onMove(perform: viewModel.move)
+                .onDelete(perform: deleteTask)
+//                .onDelete(perform: viewModel.delete)
+//                .onMove(perform: viewModel.move)
             }
             .navigationTitle("Todo List 📝")
             .toolbar {
@@ -32,10 +37,20 @@ struct MainView: View {
                 }
             }
             .sheet(isPresented: $showSheet) {
-                AddTask(viewModel: viewModel)
+                AddTask()
             }
         }
     }
+    
+    func deleteTask(at offsets: IndexSet) {
+        for offset in offsets {
+            let task = tasks[offset]
+            moc.delete(task)
+        }
+        
+        try? moc.save()
+    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

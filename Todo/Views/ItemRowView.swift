@@ -8,25 +8,27 @@
 import SwiftUI
 
 struct ItemRowView: View {
-    @Binding var task: Task
+    @Environment(\.managedObjectContext) var mc
+    @ObservedObject var task: Task
 
     var body: some View {
         HStack {
             Image(systemName: task.isCompleted ? "checkmark.circle" : "circle")
                 .foregroundColor(task.isCompleted ? .green : .red )
                 .onTapGesture {
-                        task.isCompleted.toggle()
+                    task.isCompleted.toggle()
+                    try? mc.save()
                 }
-            Text(task.item)
+            Text(task.item ?? "Unknown")
         }
     }
 }
 
 
-struct ItemRowView_Previews: PreviewProvider {
-    static var previews: some View {
-        let task = Task(item: "Sample Task", isCompleted: false)
-
-        ItemRowView(task: .constant(task))
-    }
-}
+//struct ItemRowView_Previews: PreviewProvider {
+//    static var previews: some View {
+////        let task = Task(item: "Sample Task", isCompleted: false)
+//
+//        ItemRowView(task: .constant(task))
+//    }
+//}

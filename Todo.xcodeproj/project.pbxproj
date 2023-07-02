@@ -15,6 +15,8 @@
 		A6FB106A2A5181C30098CBAB /* ItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FB10692A5181C30098CBAB /* ItemRowView.swift */; };
 		A6FB106C2A5182270098CBAB /* ToDoListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FB106B2A5182270098CBAB /* ToDoListItem.swift */; };
 		A6FB106E2A518D830098CBAB /* AddTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FB106D2A518D830098CBAB /* AddTask.swift */; };
+		A6FB10732A51A5510098CBAB /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FB10722A51A5510098CBAB /* DataController.swift */; };
+		A6FB10762A51A5930098CBAB /* Todo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A6FB10742A51A5930098CBAB /* Todo.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		A6FB10692A5181C30098CBAB /* ItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRowView.swift; sourceTree = "<group>"; };
 		A6FB106B2A5182270098CBAB /* ToDoListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListItem.swift; sourceTree = "<group>"; };
 		A6FB106D2A518D830098CBAB /* AddTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTask.swift; sourceTree = "<group>"; };
+		A6FB10722A51A5510098CBAB /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		A6FB10752A51A5930098CBAB /* Todo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Todo.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				A6FB10532A516F940098CBAB /* TodoApp.swift */,
+				A6FB10742A51A5930098CBAB /* Todo.xcdatamodeld */,
+				A6FB10722A51A5510098CBAB /* DataController.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -185,6 +191,8 @@
 				A6FB10542A516F940098CBAB /* TodoApp.swift in Sources */,
 				A6FB106E2A518D830098CBAB /* AddTask.swift in Sources */,
 				A6FB106A2A5181C30098CBAB /* ItemRowView.swift in Sources */,
+				A6FB10762A51A5930098CBAB /* Todo.xcdatamodeld in Sources */,
+				A6FB10732A51A5510098CBAB /* DataController.swift in Sources */,
 				A6FB106C2A5182270098CBAB /* ToDoListItem.swift in Sources */,
 				A6FB10682A51717A0098CBAB /* MainViewViewModel.swift in Sources */,
 			);
@@ -387,6 +395,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A6FB10742A51A5930098CBAB /* Todo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A6FB10752A51A5930098CBAB /* Todo.xcdatamodel */,
+			);
+			currentVersion = A6FB10752A51A5930098CBAB /* Todo.xcdatamodel */;
+			path = Todo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A6FB10482A516F940098CBAB /* Project object */;
 }
